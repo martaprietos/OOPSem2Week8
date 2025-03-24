@@ -22,4 +22,16 @@ public class Calculator {
         }
         return (int)result;
     }
+
+    public int div(int firstNum, int secondNum) {
+        int result;
+        if (secondNum == 0) {
+            throw new ArithmeticException("You can't divide by 0");
+        } else {
+            result = firstNum / secondNum;
+        }
+
+        return result;
+    }
+
 }

@@ -43,4 +43,15 @@ public class CalculatorTest {
         Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.mul(Integer.MAX_VALUE, 4);});
         assertEquals("Your values are too large", ex.getMessage());
     }
+
+    @Test
+    void TestDivSuccess(){
+        assertEquals(2, myCalc.div(4,2));
+    }
+
+    @Test
+    void TestDivFailZero(){
+        Exception ex = assertThrows(ArithmeticException.class, ()->{myCalc.div(5, 0);});
+        assertEquals("You can't divide by 0", ex.getMessage());
+    }
 }
