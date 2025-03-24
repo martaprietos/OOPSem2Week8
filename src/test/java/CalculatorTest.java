@@ -32,4 +32,15 @@ public class CalculatorTest {
         Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.sub(Integer.MIN_VALUE, 4);});
         assertEquals("Your values are too small", ex.getMessage());
     }
+
+    @Test
+    void TestMulSuccess(){
+        assertEquals(8, myCalc.mul(4,2));
+    }
+
+    @Test
+    void TestMulFail(){
+        Exception ex = assertThrows(IllegalArgumentException.class, ()->{myCalc.mul(Integer.MAX_VALUE, 4);});
+        assertEquals("Your values are too large", ex.getMessage());
+    }
 }
